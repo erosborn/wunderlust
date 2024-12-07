@@ -362,6 +362,11 @@ label[for="toggle"] {
 }
 
 /* --------------------------------------------------------------- contact */
+#contact {
+    padding: 0 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
 
 .form-required {
     font-size: 1.25rem;
@@ -369,9 +374,70 @@ label[for="toggle"] {
     font-style: italic;
 }
 
+form {
+    display: block;
+}
+
+form label, legend {
+    padding: 0.5rem 0;
+}
+
+.required {
+    display: inline-block;
+    color: var(--purple);
+    font-weight: bold;
+    padding: 0.25rem;
+}
+
+#names, #nums, #selects {
+    padding: 0 1rem;
+}
+
+#contact input, #contact label, #contact fieldset {
+    display: block;
+    width: 95%;
+}
+
+#names label, #nums legend, #nums fieldset ~ label {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#names input, #nums fieldset ~ input, #selects select {
+    border: solid 3px var(--purple);
+    padding: 1rem;
+}
+
+#selects select {
+    width: 100%;
+}
+
+#mySubmit {
+    background-color: var(--purple);
+    padding: 1rem;
+    color: var(--white);
+    margin: 1rem auto; 
+}
+
+/* --------------------------------------------------------------- footer */
+
+footer {
+    background-color: var(--light-gray);
+    text-align: center;
+    display: grid;
+    padding: 1rem;
+}
+
+footer p, footer a {
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+}
+
 /* --------------------- medium screens (min 768 px) --------------------- */
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
     #skip {
         position: absolute;
         top: 0;
@@ -393,7 +459,7 @@ label[for="toggle"] {
         transform: translateY(15%);
         box-shadow: 0px 5px 10px var(--dark-gray);
     }
-} */
+}
 
 /* --------------------- medium screens (min 1200) --------------------- */
 
