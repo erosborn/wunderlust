@@ -71,25 +71,60 @@ table {
     font-size: 16px;
 }
 
-/* ------------ base styles ------------ */
+/* --------------------------------------------------------------- global styles (mobile first, min 429px */
 
 h1, h2, h3 {
     font-family: var(--heads);
 }
 
-h4, p, q, small, nav, button, form {
+h4, p, q, a, small, nav, button, form {
     font-family: var(--body);
 }
 
 body {
     font-family: var(--body);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
+/* --------------------------------------------------------------- header styles */
 header {
     background-image: linear-gradient(var(--teal), var(--white));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+    align-items: center;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+header a {
+    order: -2;
+    width: 50%;
+}
+header nav {
+    order: -1;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+header h1, header p {
+    grid-column-start: span 2;
+    padding-left: 2rem;
+    color: var(--dark-gray);
 }
 
-/* --------------------- small screens (min 429px) --------------------- */
+header h1{
+    font-size: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+header a img {
+    width: 125%;
+    max-width: fit-content;
+}
+
+/* --------------------------------------------------------------- skip link & sr only styles */
 
 #skip {
     position:absolute;
@@ -106,9 +141,237 @@ header {
     height:auto;
 }
 
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    }
+
+/* --------------------------------------------------------------- nav & menu */
+
+#menu-toggle {
+    top: 1rem;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+}
+
+#toggle {
+    display: none;
+}
+
+label[for="toggle"] {
+    background-color: var(--yellow);
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border: none;
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#toggle:checked + label[for="toggle"]{
+    background-color: var(--dark-gray);
+    color: var(--white);
+    left: 0;
+    z-index: 3;
+    width: 200%;
+    transform: translate(-50%, 0)
+}
+
+#menu-toggle ul {
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+    right: -100%;
+    width: 50%;
+}
+
+#toggle:checked ~ ul {
+    right: 0;
+    background-color: rgba(234, 234, 234, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+#menu-toggle li {
+    padding: 3rem 2rem;
+    font-size: 1rem;
+    margin: 0;
+    background-color: var(--teal);
+    border-bottom: 1px solid var(--dark-gray);
+    transition: background-color 0.3s ease;
+}
+
+#menu-toggle li a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+}
+
+#menu-toggle li:hover {
+    background-color: var(--dark-gray);
+}
+
+#menu-toggle li:hover a {
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------- main */
+
+#main-content {
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------- intro */
+
+#intro {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr);
+    padding: 1em 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+#intro h2, #intro p {
+    padding: 0 2rem;
+}
+
+#img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+#img-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --------------------------------------------------------------- plan */
+
+#plan {
+    background-color: var(--yellow);
+    padding: 1rem;
+}
+
+#plan h3, #testimonials h3, #about h3, #contact h3{
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+#plan div {
+    margin: 0 auto;
+}
+
+#plan div section {
+    display: grid;
+    background-color: var(--teal);
+    border: solid 0.25rem var(--white);
+    border-radius: 0.75rem;
+    margin: 1rem auto;
+    width: 350px;
+    height: 300px;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* --------------------------------------------------------------- testimonials */
+
+#testimonials {
+    padding: 2rem;
+}
+
+#testimonials div {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#testimonials section img{
+    padding: 0.75rem;
+}
+
+#testimonials p, #testimonials q {
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+}
+
+#testimonials div h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2rem;
+}
+
+#testimonials div q {
+    font-style: italic;
+    font-weight: 100;
+}
+#testimonials div q::before {
+    content: "\201C";
+}
+#testimonials div q::after {
+    content: "\201D";
+}
+
+/* --------------------------------------------------------------- about */
+
+#about {
+    background-color: var(--blue);
+    padding: 2rem;
+}
+
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#about h4{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 0.25rem;
+}
+
+#about p{
+    font-size: 1.25rem;
+    padding: 0.25rem;
+}
+
+#about img {
+    padding: 1rem;
+}
+
+/* --------------------------------------------------------------- contact */
+
+.form-required {
+    font-size: 1.25rem;
+    font-family: var(--body);
+    font-style: italic;
+}
+
 /* --------------------- medium screens (min 768 px) --------------------- */
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     #skip {
         position: absolute;
         top: 0;
@@ -130,7 +393,8 @@ header {
         transform: translateY(15%);
         box-shadow: 0px 5px 10px var(--dark-gray);
     }
-}
+} */
 
 /* --------------------- medium screens (min 1200) --------------------- */
-@media screen and (min-width: 1200px) {}
+
+/* @media screen and (min-width: 1200px) {} */

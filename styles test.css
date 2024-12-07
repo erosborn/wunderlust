@@ -1,0 +1,197 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS for the HTML Layout */
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+    --heads: "Molle", serif;
+    --body: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body);
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+header {
+    background: linear-gradient(to bottom, var(--blue), #88c0eb);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: var(--heads);
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+}
+
+header p {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+#intro {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background-color: var(--yellow);
+    color: var(--dark-gray);
+}
+
+#intro h2 {
+    font-family: var(--heads);
+    font-size: 2.8rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+}
+
+#intro p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+}
+
+#img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem auto;
+    max-width: 1200px;
+}
+
+#img-grid img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#plan {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+#plan h3 {
+    font-family: var(--heads);
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+#plan div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    text-align: center;
+}
+
+#plan div section {
+    background-color: var(--teal);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: var(--white);
+}
+
+#testimonials {
+    padding: 3rem 1.5rem;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+#testimonials h3 {
+    font-family: var(--heads);
+    font-size: 2.2rem;
+    color: var(--purple);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+#testimonials div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+    text-align: center;
+}
+
+#testimonials div section {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--teal);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 600;
+}
